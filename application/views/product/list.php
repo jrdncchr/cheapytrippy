@@ -2,7 +2,7 @@
 <div class="danero-box">
     <div class="row">
         <div class="col-sm-12">
-            <table id="product-list-dt" class="table table-hover table-bordered" width="100%">
+            <table id="product-list-dt" class="display table table-hover table-bordered" width="100%">
                 <thead>
                 <tr>
                     <th>Date Created</th>
@@ -13,27 +13,6 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td>03/19/2016</td>
-                    <td>Enchanted Kingdom Ticket</td>
-                    <td>1234</td>
-                    <td>567</td>
-                    <td>Active</td>
-                </tr>
-                <tr>
-                    <td>03/21/2016</td>
-                    <td>4 Days Sport Event</td>
-                    <td>777</td>
-                    <td>567</td>
-                    <td>Active</td>
-                </tr>
-                <tr>
-                    <td>03/24/2016</td>
-                    <td>Volley Ball Event</td>
-                    <td>234</td>
-                    <td>22</td>
-                    <td>For Approval</td>
-                </tr>
                 </tbody>
             </table>
         </div>
@@ -41,12 +20,33 @@
 </div>
 
 <script>
+    var actionUrl = baseUrl + 'product/action';
     $(function() {
         $('#sn-product-home').parent().find('ul').addClass('in');
         $('#sn-product-list').addClass('active');
 
         $('#product-list-dt').dataTable({
-
+            "destroy": true,
+            "ajax": {
+                "type": "POST",
+                "url": actionUrl,
+                "data": {action: "list"}
+            },
+            columns: [
+                {data: "date_created", width: "20%"},
+                {data: "title", width: "30%"},
+                {data: "product_id", width: "15%"},
+                {data: "supplier_id", width: "15%"},
+                {data: "status", width: "20%"}
+            ],
+            "fnDrawCallback": function (oSettings) {
+                var table = $("#product-list-dt").dataTable();
+                $('#product-list-dt tbody tr').on('dblclick', function () {
+                    var pos = table.fnGetPosition(this);
+                    var data = table.fnGetData(pos);
+                    window.location = "<?php echo base_url() . "product/form/" ?>" + data.product_id;
+                });
+            }
         });
     });
 </script>

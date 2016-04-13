@@ -49,8 +49,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-$route['default_controller'] = 'cheapytrippy';
-$route['login'] = 'cheapytrippy/login';
+$route['default_controller'] = 'site';
+$route['login'] = 'site/login';
+$route['logout'] = 'site/logout';
 $route['api/(:any)'] = 'api/$1';
 $route['admin/(:any)'] = "admin/$1";
 
@@ -59,5 +60,5 @@ $route['(:any)/(:any)'] = "admin/$1/$2";
 $route['(:any)/(:any)/(:any)'] = "admin/$1/$2/$3";
 $route['(:any)/(:any)/(:any)/(:any)'] = "admin/$1/$2/$3/$4";
 
-$route['404_override'] = 'cheapytrippy/login';
+$route['404_override'] = 'site/login';
 $route['translate_uri_dashes'] = FALSE;

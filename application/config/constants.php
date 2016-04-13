@@ -7,9 +7,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Cheapy Trippy Constants
 */
 
-defined('DB_NAME')  OR define('DB_NAME', 'cheapytrippy');
-defined('DB_USER')  OR define('DB_USER', 'root');
-defined('DB_PASS')  OR define('DB_PASS', '');
+defined('DB_NAME')  OR define('DB_NAME', 'jrdncchr_cheapytrippy');
+defined('DB_USER')  OR define('DB_USER', 'jrdncchr_danero');
+defined('DB_PASS')  OR define('DB_PASS', 'danero1120');
 
 /*
 |--------------------------------------------------------------------------

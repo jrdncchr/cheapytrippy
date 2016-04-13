@@ -8,7 +8,7 @@
         <a id="sn-product-home" href="<?php echo base_url() . 'product/home'; ?>">PRODUCTS <span class="pull-right"><i class="caret"></i></span></a>
         <ul class="nav nav-pills nav-stacked">
             <li><a id="sn-product-list" href="<?php echo base_url() . 'product/all'; ?>">List of Products</a></li>
-            <li><a id="sn-product-add" href="<?php echo base_url() . 'product/add'; ?>">Add Product</a></li>
+            <li><a id="sn-product-add" href="<?php echo base_url() . 'product/form'; ?>">Add Product</a></li>
             <li><a href="#">Groups</a></li>
         </ul>
     </li>

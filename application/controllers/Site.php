@@ -2,7 +2,7 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class CheapyTrippy extends MY_Controller {
+class Site extends MY_Controller {
 
     public function __construct() {
         parent::__construct();
@@ -30,6 +30,11 @@ class CheapyTrippy extends MY_Controller {
             $this->_render('login');
         }
 
+    }
+
+    function logout() {
+        $this->session->unset_userdata('user');
+        $this->_render('login');
     }
 
 }
